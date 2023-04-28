@@ -1,8 +1,13 @@
+
+
 .header{
     background: #BB2339;
     padding: 20px 0 90px 0;
     color: white;
     
+}
+.active__header {
+    background-color: black;
 }
 .nav{
     margin-bottom: 50px;
@@ -21,6 +26,10 @@
     padding-right: 0;
    
     margin-right: 0;
+}
+.header__item i {
+    width: 30px;
+    font-size: 2rem;
 }
 .header_btn {
     padding: 7px 20px;

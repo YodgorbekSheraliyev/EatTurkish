@@ -1,0 +1,15 @@
+.menu__btn-wrapper {
+    overflow-x: auto;
+    padding: 20px 0;
+    gap: 10px;
+}
+.menu__btn {
+    min-width: 150px;
+}
+/* ::-webkit-scrollbar{
+    height: 2px;
+
+}
+::-webkit-scrollbar-button{
+    height: 2px;
+} */
