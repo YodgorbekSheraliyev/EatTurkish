@@ -1,0 +1,53 @@
+.user {
+    max-width: 90%;
+    margin: auto;
+}
+.form {
+    display: none;
+    padding: 20px 30px 30px 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(231, 231, 231);
+}
+.form__title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+.form input {
+    width: 100%;
+    outline: none;
+    padding: 3px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.form label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.submit,.add {
+    float: right;
+    margin: 15px 0;
+    border-radius: 12px;
+    background-color: orange;
+    font-size: 1.5rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    padding: 5px 20px;
+}
+.submit:active, .add:active {
+    transform: scale(0.95);
+}
+.add {
+    float: left;
+    background-color: green;
+}
+table,tr,td,th {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
