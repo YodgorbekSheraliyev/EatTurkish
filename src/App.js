@@ -1,4 +1,4 @@
-import { ToDo } from "./Components/ToDo/ToDo";
+import { ToDo, Todos } from "./Components/ToDo/ToDo";
 import { useState } from "react";
 
 function App() {
