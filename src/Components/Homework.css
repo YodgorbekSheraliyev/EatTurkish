@@ -1,0 +1,13 @@
+.country__wrapper {
+    max-width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+}
+.box {
+    border: 2px solid green;
+}
