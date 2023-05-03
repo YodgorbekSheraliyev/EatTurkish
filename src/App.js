@@ -1,9 +1,10 @@
-import { ToDo } from "./Components/ToDo/ToDo";
+import UseEffect from "./Components/UseEffect";
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <ToDo/>
+      <UseEffect/>
     </div>
   );
 }
