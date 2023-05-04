@@ -1,10 +1,11 @@
-import './App.css';
-import Homework52 from "./Components/Homework52";
+import React from "react";
+import "./App.css";
+import Routing from "./Router/Routing";
 
 function App() {
   return (
     <div className="App">
-      <Homework52/>
+      <Routing/>
     </div>
   );
 }
