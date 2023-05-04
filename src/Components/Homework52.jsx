@@ -33,9 +33,9 @@ const Homework52 = () => {
   return (
     <div>
       <div className="btn__wrapper">
-        <button onClick={handleUzb}>O'zbekiston</button>
-        <button onClick={handleGermany}>Germaniya</button>
-        <button onClick={handleAll}>Barchasi</button>
+        <button className="btn__uzb" onClick={handleUzb}>O'zbekiston</button>
+        <button className="btn__ger" onClick={handleGermany}>Germaniya</button>
+        <button className="btn__all" onClick={handleAll}>Barchasi</button>
       </div>
       <div className="country__wrapper">
         {data.map((country, index) => (

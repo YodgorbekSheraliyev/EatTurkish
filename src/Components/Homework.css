@@ -6,8 +6,38 @@
     gap: 40px;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid black;
 }
 .box {
+    box-sizing: border-box;
+    width: 250px;
+    padding: 10px;
+    text-align: left;
     border: 2px solid green;
+    border-radius: 10px;
+    background-color: #bbb;
+}
+.box img {
+    object-fit: cover;
+    width: 100%;
+}
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+}
+button:active {
+    transform: scale(0.95);
+}
+
+.btn__uzb {
+    background-color: orange;
+}
+
+.btn__ger {
+    background-color: aqua;
+}
+
+.btn__all {
+    background-color: greenyellow;
 }
