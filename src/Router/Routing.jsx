@@ -15,7 +15,7 @@ const Routing = () => {
             <Route path="/about" element={<About/>}/>
             <Route path="/blog" element={<Blog/>}/>
             <Route path='/error404 ' element={<Error404/>}/>
-            <Route path="/single/:id" element={<Single/>}/>
+            <Route path="/home/news/:id" element={<Single/>}/>
             <Route path="*" element={<Navigate to='error404' />} />
         </Routes>
     <Footer/>
