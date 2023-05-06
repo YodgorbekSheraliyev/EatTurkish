@@ -5,12 +5,15 @@ export const MyContext = createContext();
 export const MyProvider = ({children}) => {
     const [count, setCount] = useState(0);
 
-    const handleCount = () => {
+    const increaseCount = () => {
         setCount(count+1);
+    }
+    const decreaseCount = () => {
+        setCount(count-1);
     }
 
     return(
-        <MyContext.Provider value={{count, handleCount}}>
+        <MyContext.Provider value={{count, increaseCount, decreaseCount}}>
             {children}
         </MyContext.Provider>
     )
