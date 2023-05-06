@@ -1,32 +1,35 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios';
-import Card from './Card';
+import { useEffect, useState } from "react"
+import axios from "axios";
+import Card from "./Card";
 
 const Home = () => {
+    const [data, setData] = useState([]);
 
-  const [data, setData] = useState([]);
-
-  const fetchData = async () => {
-    try {
-    const response = await axios.get('https://api.spaceflightnewsapi.net/v3/articles');
-    setData(response.data)
-    } catch (error) {
-      console.error(error)
+    const getData = async () => {
+        try {
+            const response = await axios.get(`https://restcountries.com/v3.1/all`)
+            setData(response.data);
+            // console.log(response);
+        } catch (error) {
+            // console.error(error);
+        }
     }
-  }
+    useEffect(() => {
+        getData();
+    }, []);
+    const myCountries = data.map((country, index) => (
+        
+        // console.log(country)
+        <Card key={index} flag={country.flags.png} 
+        alt={country.flags.alt}  name={country.name.common} 
+        capital={country.capital} 
+        population={country.population}/>
 
-  useEffect(() => {
-    fetchData()
-  },[])
-  
-  const myCards = data.map((news) =>(
-  <Card key={news.id} id={news.id} image={news.imageUrl} 
-  title={news.title} summary={news.summary} site={news.newsSite}/>
-  ));
-  
+        
+    ))
   return (
-    <div className='card__wrapper container'>
-      {myCards}
+    <div className="card__wrapper container">
+       {myCountries}
     </div>
   )
 }

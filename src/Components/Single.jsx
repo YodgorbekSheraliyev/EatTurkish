@@ -1,34 +1,38 @@
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 
 const Single = () => {
-  const [singleData, setSingleData] = useState([]);
-  const { id } = useParams();
-  let url = `https://api.spaceflightnewsapi.net/v3/articles/${id}`;
+  const [data, setData] = useState([]);
+  const { name } = useParams();
+  let url = `https://restcountries.com/v3.1/name/${name}`;
 
-  const singleFetchData = async () => {
+  const fetchData = async () => {
     try {
       const response = await axios.get(url);
-      setSingleData(response.data);
+      setData(response.data);
     } catch (error) {
       console.error(error);
     }
   };
-
   useEffect(() => {
-    singleFetchData();
-  }, []);
+    fetchData();
+  }, [url]);
 
   return (
     <>
-      <div className="single__card">
-        <img src={singleData.imageUrl} alt={singleData.title} />
-        <h4>{singleData.title}</h4>
-        <span>{singleData.site}</span>
-        <p>{singleData.summary}</p>
-      </div>
-      <button className="back__btn"><Link to='/'>back</Link></button>
+      {data.map((singleData, index) => (
+        <div key={index} className="card single__card">
+          <img src={singleData.flags.png} alt={singleData.flags.alt} />
+          <h4>Country: {singleData.name.common}</h4>
+          <p>Capital: {singleData.capital}</p>
+          <p>Population: {singleData.population}</p>
+          <br />
+          <button className="info__btn">
+            <NavLink to="/">Back</NavLink>
+          </button>
+        </div>
+      ))}
     </>
   );
 };

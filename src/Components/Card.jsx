@@ -1,14 +1,15 @@
-import { NavLink } from "react-router-dom"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Card = (props) => {
-    const {id, image, title, summary, site} = props
+    const {flag, alt, name, capital, population } = props;
   return (
     <div className='card'>
-        <img src={image} alt={title} />
-        <h4>{title}</h4>
-        <span>{site}</span>
-        <p>{summary}</p>
-        <NavLink to={`/home/news/${id}`}>Read more</NavLink>
+        <img src={flag} alt={alt} />
+        <h4>Country: {name}</h4>
+        <p>Capital: {capital}</p>
+        <p>Population: {population}</p>
+        <button className='info__btn'><NavLink to={`/country/name/${name.toLowerCase()}` }>Read more</NavLink></button>
     </div>
   )
 }

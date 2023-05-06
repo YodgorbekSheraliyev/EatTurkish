@@ -1,4 +1,4 @@
-ul {
+/* ul {
   list-style: none;
 }
 a {
@@ -55,9 +55,9 @@ a {
 }
 .back__btn {
   display: inline-block;
-}
+} */
 /* Error page */
-.error__wrapper {
+/* .error__wrapper {
   margin:100px auto;
   min-height: 100vh;
   text-align: center;
@@ -65,11 +65,11 @@ a {
 .error_wrapper h1 {
   font-size: 4rem;
   color: red;
-}
+} */
 
 
 /* footer */
-.footer {
+/* .footer {
   background-color: #666;
   padding: 10px 0;
   width: 100%;
@@ -88,4 +88,66 @@ height: 20px;
   padding: 0;
   display: inline-block;
   z-index: 25;
+} */
+
+.App {
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px 0;
+  background-color: #565656;
+  z-index: 10;
+}
+.nav .container {
+  font-size: 1.5rem;
+  max-width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav ul {
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+.card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.card  {
+  max-width: 350px;
+  text-align: center;
+  border: 2px solid grey;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+.card p{
+  margin-bottom:40px;
+}
+.info__btn {
+  position: absolute;
+  bottom: 5px;
+  right: 50%;
+  transform: translateX(50%);
+  border-radius: 10px;
+  border-style: ridge;
+  padding: 2px 20px;
+}
+.single__card {
+  margin: auto;
 }
