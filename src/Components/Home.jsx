@@ -5,6 +5,7 @@ import Card from './Card';
 const Home = () => {
 
   const [data, setData] = useState([]);
+  const [searchTitle, setSearchTitle] = useState('');
 
   const fetchData = async () => {
     try {
@@ -19,15 +20,24 @@ const Home = () => {
     fetchData()
   },[])
   
-  const myCards = data.map((news) =>(
-  <Card key={news.id} id={news.id} image={news.imageUrl} 
-  title={news.title} summary={news.summary} site={news.newsSite}/>
-  ));
+  const filteredData = data.filter((news) => {
+    if(!searchTitle.trim()){
+      return news;
+    }else if(news.title.toLowerCase().includes(searchTitle.toLowerCase())){
+      return news;
+    }
+  }).map((news) =>(
+    <Card key={news.id} id={news.id} image={news.imageUrl} 
+    title={news.title} summary={news.summary} site={news.newsSite}/>
+    ));
   
   return (
+    <>
+      <input type="text" value={searchTitle} onChange={(e)=> setSearchTitle(e.target.value)}  />
     <div className='card__wrapper container'>
-      {myCards}
+      {filteredData}
     </div>
+    </>
   )
 }
 
